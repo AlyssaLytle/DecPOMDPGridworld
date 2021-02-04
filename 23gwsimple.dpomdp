@@ -1,0 +1,61 @@
+agents: 2 
+discount: 1 
+values: reward
+states: loc11 loc12 loc13 loc21 loc22 loc23
+start: loc11
+actions:
+left right up down
+left right up down
+observations:
+obs1
+obs1
+T: up up : loc11 : loc11 : 1
+T: up up : loc12 : loc12 : 1
+T: up up : loc13 : loc13 : 1
+T: up up : loc21 : loc11 : 1
+T: up up : loc22 : loc12 : 1
+T: up up : loc23 : loc13 : 1
+T: down down : loc11 : loc21 : 1
+T: down down : loc12 : loc22 : 1
+T: down down : loc13 : loc23 : 1
+T: down down : loc21 : loc21 : 1
+T: down down : loc22 : loc22 : 1
+T: down down : loc23 : loc23 : 1
+T: left left : loc11 : loc11 : 1
+T: left left : loc12 : loc11 : 1
+T: left left : loc13 : loc12 : 1
+T: left left : loc21 : loc21 : 1
+T: left left : loc22 : loc21 : 1
+T: left left : loc23 : loc22 : 1
+T: right right : loc11 : loc12 : 1
+T: right right : loc12 : loc13 : 1
+T: right right : loc13 : loc13 : 1
+T: right right : loc21 : loc22 : 1
+T: right right : loc22 : loc23 : 1
+T: right right : loc23 : loc23 : 1
+O: * :
+uniform
+R: up up : loc11 : * : * : 0
+R: up up : loc12 : * : * : 0
+R: up up : loc13 : * : * : 0
+R: up up : loc21 : * : * : 0
+R: up up : loc22 : * : * : -1
+R: up up : loc23 : * : * : -2
+R: down down : loc11 : * : * : -5
+R: down down : loc12 : * : * : -5
+R: down down : loc13 : * : * : 100
+R: down down : loc21 : * : * : 0
+R: down down : loc22 : * : * : 0
+R: down down : loc23 : * : * : 0
+R: left left : loc11 : * : * : 0
+R: left left : loc12 : * : * : 0
+R: left left : loc13 : * : * : -1
+R: left left : loc21 : * : * : 0
+R: left left : loc22 : * : * : -5
+R: left left : loc23 : * : * : -5
+R: right right : loc11 : * : * : -1
+R: right right : loc12 : * : * : -2
+R: right right : loc13 : * : * : 0
+R: right right : loc21 : * : * : -5
+R: right right : loc22 : * : * : 100
+R: right right : loc23 : * : * : 0

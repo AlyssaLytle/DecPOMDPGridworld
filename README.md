@@ -15,4 +15,4 @@ This is a basic 2x3 gridworld example. Two agents are moving around a reward map
 This is similar to Example 1 except now there are two reward maps. The agents are able to observe what reward map they are on and navigate accordingly. 
 
 ## Example 3: 23gw-comm
-This expands on the previous examples. Now, for actions, they can either move or move AND communicate. When they communicate, they are able to observe what reward map they are on. 
+This expands on the previous examples. Now, for actions, they can either move or move AND communicate. Communication comes at a small cost. When they communicate, they are able to observe what reward map they are on. 

@@ -57,6 +57,10 @@ T: comm-right comm-right : loc13-rmap2 : loc13-rmap2 : 1
 T: comm-right comm-right : loc21-rmap2 : loc22-rmap2 : 1
 T: comm-right comm-right : loc22-rmap2 : loc23-rmap2 : 1
 T: comm-right comm-right : loc23-rmap2 : loc23-rmap2 : 1
+O: right right : * : obs1 obs1 : .5
+O: right right : * : obs2 obs2 : .5
+O: down down: * : obs1 obs1 : .5
+O: down down: * : obs2 obs2 : .5
 O: comm-down comm-down : loc11-rmap1: obs1 obs1 : 1
 O: comm-down comm-down : loc12-rmap1: obs1 obs1 : 1
 O: comm-down comm-down : loc13-rmap1: obs1 obs1 : 1

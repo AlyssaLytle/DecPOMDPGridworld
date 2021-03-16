@@ -30,3 +30,12 @@ This expands on the previous examples. Now, for actions, they can either move or
 
 ### Solution Policy 
 ![Solution Policy](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/comm-sol.png)
+
+## Example 4: 23gw-nocomm
+This is the same as the previous example, except the reward maps are different.
+
+![New Rmaps](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/no-comm-rmaps.png)
+
+Note that, regardless of which map the agents are on, there is always a path that doesn't hit an obstacle. This makes communication unnecessary. This is shown in the policy. 
+
+![No Communication Policy](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/no-comm-example.png)

@@ -39,3 +39,11 @@ This is the same as the previous example, except the reward maps are different.
 Note that, regardless of which map the agents are on, there is always a path that doesn't hit an obstacle. This makes communication unnecessary. This is shown in the policy. 
 
 ![No Communication Policy](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/no-comm-example.png)
+
+## Example 5: 23gw-machine knows
+
+In this example, we are back to the original two reward maps. The human is the one deciding movement in the environment and the machine is the one deciding whether or not to communicate. You can see that the machine decides to communicate and therefore the human traverses the obstacles correctly. 
+
+![Human Policy](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/humanpol.png)
+
+![Machine Policy](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/machinepol.png)

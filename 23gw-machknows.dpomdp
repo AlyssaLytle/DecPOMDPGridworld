@@ -1,0 +1,155 @@
+agents: 2 
+discount: 1 
+values: reward
+states: loc11-rmap1 loc12-rmap1 loc13-rmap1 loc21-rmap1 loc22-rmap1 loc23-rmap1 loc11-rmap2 loc12-rmap2 loc13-rmap2 loc21-rmap2 loc22-rmap2 loc23-rmap2
+start include: loc11-rmap1 loc11-rmap2
+actions:
+right down
+comm none
+observations:
+obs1 obs2
+obs1 obs2
+T: down * : loc11-rmap1 : loc21-rmap1 : 1
+T: down * : loc12-rmap1 : loc22-rmap1 : 1
+T: down * : loc13-rmap1 : loc23-rmap1 : 1
+T: down * : loc21-rmap1 : loc21-rmap1 : 1
+T: down * : loc22-rmap1 : loc22-rmap1 : 1
+T: down * : loc23-rmap1 : loc23-rmap1 : 1
+T: right * : loc11-rmap1 : loc12-rmap1 : 1
+T: right * : loc12-rmap1 : loc13-rmap1 : 1
+T: right * : loc13-rmap1 : loc13-rmap1 : 1
+T: right * : loc21-rmap1 : loc22-rmap1 : 1
+T: right * : loc22-rmap1 : loc23-rmap1 : 1
+T: right * : loc23-rmap1 : loc23-rmap1 : 1
+T: down * : loc11-rmap2 : loc21-rmap2 : 1
+T: down * : loc12-rmap2 : loc22-rmap2 : 1
+T: down * : loc13-rmap2 : loc23-rmap2 : 1
+T: down * : loc21-rmap2 : loc21-rmap2 : 1
+T: down * : loc22-rmap2 : loc22-rmap2 : 1
+T: down * : loc23-rmap2 : loc23-rmap2 : 1
+T: right * : loc11-rmap2 : loc12-rmap2 : 1
+T: right * : loc12-rmap2 : loc13-rmap2 : 1
+T: right * : loc13-rmap2 : loc13-rmap2 : 1
+T: right * : loc21-rmap2 : loc22-rmap2 : 1
+T: right * : loc22-rmap2 : loc23-rmap2 : 1
+T: right * : loc23-rmap2 : loc23-rmap2 : 1
+O: * none : loc11-rmap1 : obs1 obs1 : .5 
+O: * none : loc11-rmap1 : obs2 obs1 : .5 
+O: * none : loc12-rmap1 : obs1 obs1 : .5 
+O: * none : loc12-rmap1 : obs2 obs1 : .5 
+O: * none : loc13-rmap1 : obs1 obs1 : .5 
+O: * none : loc13-rmap1 : obs2 obs1 : .5 
+O: * none : loc21-rmap1 : obs1 obs1 : .5 
+O: * none : loc21-rmap1 : obs2 obs1 : .5 
+O: * none : loc22-rmap1 : obs1 obs1 : .5 
+O: * none : loc22-rmap1 : obs2 obs1 : .5 
+O: * none : loc23-rmap1 : obs1 obs1 : .5 
+O: * none : loc23-rmap1 : obs2 obs1 : .5 
+O: * none : loc11-rmap1 : obs1 obs1 : .5 
+O: * none : loc11-rmap1 : obs2 obs1 : .5 
+O: * none : loc12-rmap1 : obs1 obs1 : .5 
+O: * none : loc12-rmap1 : obs2 obs1 : .5 
+O: * none : loc13-rmap1 : obs1 obs1 : .5 
+O: * none : loc13-rmap1 : obs2 obs1 : .5 
+O: * none : loc21-rmap1 : obs1 obs1 : .5 
+O: * none : loc21-rmap1 : obs2 obs1 : .5 
+O: * none : loc22-rmap1 : obs1 obs1 : .5 
+O: * none : loc22-rmap1 : obs2 obs1 : .5 
+O: * none : loc23-rmap1 : obs1 obs1 : .5 
+O: * none : loc23-rmap1 : obs2 obs1 : .5 
+O: * none : loc11-rmap2 : obs1 obs2 : .5 
+O: * none : loc11-rmap2 : obs2 obs2 : .5 
+O: * none : loc12-rmap2 : obs1 obs2 : .5 
+O: * none : loc12-rmap2 : obs2 obs2 : .5 
+O: * none : loc13-rmap2 : obs1 obs2 : .5 
+O: * none : loc13-rmap2 : obs2 obs2 : .5 
+O: * none : loc21-rmap2 : obs1 obs2 : .5 
+O: * none : loc21-rmap2 : obs2 obs2 : .5 
+O: * none : loc22-rmap2 : obs1 obs2 : .5 
+O: * none : loc22-rmap2 : obs2 obs2 : .5 
+O: * none : loc23-rmap2 : obs1 obs2 : .5 
+O: * none : loc23-rmap2 : obs2 obs2 : .5 
+O: * none : loc11-rmap2 : obs1 obs2 : .5 
+O: * none : loc11-rmap2 : obs2 obs2 : .5 
+O: * none : loc12-rmap2 : obs1 obs2 : .5 
+O: * none : loc12-rmap2 : obs2 obs2 : .5 
+O: * none : loc13-rmap2 : obs1 obs2 : .5 
+O: * none : loc13-rmap2 : obs2 obs2 : .5 
+O: * none : loc21-rmap2 : obs1 obs2 : .5 
+O: * none : loc21-rmap2 : obs2 obs2 : .5 
+O: * none : loc22-rmap2 : obs1 obs2 : .5 
+O: * none : loc22-rmap2 : obs2 obs2 : .5 
+O: * none : loc23-rmap2 : obs1 obs2 : .5 
+O: * none : loc23-rmap2 : obs2 obs2 : .5 
+O: * comm : loc11-rmap1: obs1 obs1 : 1
+O: * comm : loc12-rmap1: obs1 obs1 : 1
+O: * comm : loc13-rmap1: obs1 obs1 : 1
+O: * comm : loc21-rmap1: obs1 obs1 : 1
+O: * comm : loc22-rmap1: obs1 obs1 : 1
+O: * comm : loc23-rmap1: obs1 obs1 : 1
+O: * comm : loc11-rmap1: obs1 obs1 : 1
+O: * comm : loc12-rmap1: obs1 obs1 : 1
+O: * comm : loc13-rmap1: obs1 obs1 : 1
+O: * comm : loc21-rmap1: obs1 obs1 : 1
+O: * comm : loc22-rmap1: obs1 obs1 : 1
+O: * comm : loc23-rmap1: obs1 obs1 : 1
+O: * comm : loc11-rmap2: obs2 obs2 : 1
+O: * comm : loc12-rmap2: obs2 obs2 : 1
+O: * comm : loc13-rmap2: obs2 obs2 : 1
+O: * comm : loc21-rmap2: obs2 obs2 : 1
+O: * comm : loc22-rmap2: obs2 obs2 : 1
+O: * comm : loc23-rmap2: obs2 obs2 : 1
+O: * comm : loc11-rmap2: obs2 obs2 : 1
+O: * comm : loc12-rmap2: obs2 obs2 : 1
+O: * comm : loc13-rmap2: obs2 obs2 : 1
+O: * comm : loc21-rmap2: obs2 obs2 : 1
+O: * comm : loc22-rmap2: obs2 obs2 : 1
+O: * comm : loc23-rmap2: obs2 obs2 : 1
+R: down comm :loc11-rmap1 : * : * : -2
+R: down comm :loc12-rmap1 : * : * : -6
+R: down comm :loc13-rmap1 : * : * : 99
+R: down comm :loc21-rmap1 : * : * : -1
+R: down comm :loc22-rmap1 : * : * : -1
+R: down comm :loc23-rmap1 : * : * : -1
+R: right comm :loc11-rmap1 : * : * : -2
+R: right comm :loc12-rmap1 : * : * : -2
+R: right comm :loc13-rmap1 : * : * : -1
+R: right comm :loc21-rmap1 : * : * : -6
+R: right comm :loc22-rmap1 : * : * : 99
+R: right comm :loc23-rmap1 : * : * : -1
+R: down comm :loc11-rmap2 : * : * : -2
+R: down comm :loc12-rmap2 : * : * : -2
+R: down comm :loc13-rmap2 : * : * : 99
+R: down comm :loc21-rmap2 : * : * : -1
+R: down comm :loc22-rmap2 : * : * : -1
+R: down comm :loc23-rmap2 : * : * : -1
+R: right comm :loc11-rmap2 : * : * : -2
+R: right comm :loc12-rmap2 : * : * : -6
+R: right comm :loc13-rmap2 : * : * : -1
+R: right comm :loc21-rmap2 : * : * : -2
+R: right comm :loc22-rmap2 : * : * : 99
+R: right comm :loc23-rmap2 : * : * : -1
+R: down none : loc11-rmap1 : * : * : -1
+R: down none : loc12-rmap1 : * : * : -5
+R: down none : loc13-rmap1 : * : * : 100
+R: down none : loc21-rmap1 : * : * : 0
+R: down none : loc22-rmap1 : * : * : 0
+R: down none : loc23-rmap1 : * : * : 0
+R: right none : loc11-rmap1 : * : * : -1
+R: right none : loc12-rmap1 : * : * : -1
+R: right none : loc13-rmap1 : * : * : 0
+R: right none : loc21-rmap1 : * : * : -5
+R: right none : loc22-rmap1 : * : * : 100
+R: right none : loc23-rmap1 : * : * : 0
+R: down none : loc11-rmap2 : * : * : -1
+R: down none : loc12-rmap2 : * : * : -1
+R: down none : loc13-rmap2 : * : * : 100
+R: down none : loc21-rmap2 : * : * : 0
+R: down none : loc22-rmap2 : * : * : 0
+R: down none : loc23-rmap2 : * : * : 0
+R: right none : loc11-rmap2 : * : * : -1
+R: right none : loc12-rmap2 : * : * : -5
+R: right none : loc13-rmap2 : * : * : 0
+R: right none : loc21-rmap2 : * : * : -1
+R: right none : loc22-rmap2 : * : * : 100
+R: right none : loc23-rmap2 : * : * : 0

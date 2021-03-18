@@ -42,8 +42,23 @@ Note that, regardless of which map the agents are on, there is always a path tha
 
 ## Example 5: 23gw-machine knows
 
-In this example, we are back to the original two reward maps. The human is the one deciding movement in the environment and the machine is the one deciding whether or not to communicate. You can see that the machine decides to communicate and therefore the human traverses the obstacles correctly. 
+In this example, we are back to the original two reward maps. The human is the one deciding movement in the environment and the machine is the one deciding whether or not to communicate. The machine knows everything about the environment. You can see that the machine decides to communicate and therefore the human traverses the obstacles correctly. 
 
 ![Human Policy](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/humanpol.png)
 
 ![Machine Policy](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/machinepol.png)
+
+
+## Example 6: 23gw-sharedctrl
+
+In this example, the machine knows everything and has the option to communicate or take control.  The cost to communicate is -1 and the cost to take control is -5. The machine chooses to communicate and not take control.
+
+![human policy](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/human-in-control.png)
+
+![machine policy](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/machine-communicate.png)
+
+## Example 7: 23gw-sharedctrl2
+
+In this example, it's the same as before but the cost to communicate is -5 and the cost to take control is -1.  In this one, the machine chooses to take control. 
+
+![Machine takes control](https://github.com/AlyssaByrnes/DecPOMDPGridworld/blob/master/machine-take-control.png)

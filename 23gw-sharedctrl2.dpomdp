@@ -1,0 +1,564 @@
+agents: 2 
+discount: 1 
+values: reward
+states: loc11-rmap1-ctrlM loc11-rmap1-ctrlH loc11-rmap2-ctrlM loc11-rmap2-ctrlH loc12-rmap1-ctrlM loc12-rmap1-ctrlH loc12-rmap2-ctrlM loc12-rmap2-ctrlH loc13-rmap1-ctrlM loc13-rmap1-ctrlH loc13-rmap2-ctrlM loc13-rmap2-ctrlH loc21-rmap1-ctrlM loc21-rmap1-ctrlH loc21-rmap2-ctrlM loc21-rmap2-ctrlH loc22-rmap1-ctrlM loc22-rmap1-ctrlH loc22-rmap2-ctrlM loc22-rmap2-ctrlH loc23-rmap1-ctrlM loc23-rmap1-ctrlH loc23-rmap2-ctrlM loc23-rmap2-ctrlH 
+start include: loc11-rmap1-ctrlH loc11-rmap2-ctrlH
+actions:
+right down comm switch-ctrl
+right down comm switch-ctrl
+observations:
+obs1 obs2
+obs1 obs2
+T: down right : loc11-rmap1-ctrlH : loc21-rmap1-ctrlH : 1
+T: down down : loc11-rmap1-ctrlH : loc21-rmap1-ctrlH : 1
+T: down comm : loc11-rmap1-ctrlH : loc21-rmap1-ctrlH : 1
+T: down switch-ctrl : loc11-rmap1-ctrlH : loc21-rmap1-ctrlM : 1
+T: right down : loc11-rmap1-ctrlM : loc21-rmap1-ctrlM : 1
+T: down down : loc11-rmap1-ctrlM : loc21-rmap1-ctrlM : 1
+T: comm down : loc11-rmap1-ctrlM : loc21-rmap1-ctrlM : 1
+T: switch-ctrl down : loc11-rmap1-ctrlM : loc21-rmap1-ctrlH : 1
+T: down right : loc12-rmap1-ctrlH : loc22-rmap1-ctrlH : 1
+T: down down : loc12-rmap1-ctrlH : loc22-rmap1-ctrlH : 1
+T: down comm : loc12-rmap1-ctrlH : loc22-rmap1-ctrlH : 1
+T: down switch-ctrl : loc12-rmap1-ctrlH : loc22-rmap1-ctrlM : 1
+T: right down : loc12-rmap1-ctrlM : loc22-rmap1-ctrlM : 1
+T: down down : loc12-rmap1-ctrlM : loc22-rmap1-ctrlM : 1
+T: comm down : loc12-rmap1-ctrlM : loc22-rmap1-ctrlM : 1
+T: switch-ctrl down : loc12-rmap1-ctrlM : loc22-rmap1-ctrlH : 1
+T: down right : loc13-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: down down : loc13-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: down comm : loc13-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: down switch-ctrl : loc13-rmap1-ctrlH : loc23-rmap1-ctrlM : 1
+T: right down : loc13-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: down down : loc13-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: comm down : loc13-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: switch-ctrl down : loc13-rmap1-ctrlM : loc23-rmap1-ctrlH : 1
+T: down right : loc21-rmap1-ctrlH : loc21-rmap1-ctrlH : 1
+T: down down : loc21-rmap1-ctrlH : loc21-rmap1-ctrlH : 1
+T: down comm : loc21-rmap1-ctrlH : loc21-rmap1-ctrlH : 1
+T: down switch-ctrl : loc21-rmap1-ctrlH : loc21-rmap1-ctrlM : 1
+T: right down : loc21-rmap1-ctrlM : loc21-rmap1-ctrlM : 1
+T: down down : loc21-rmap1-ctrlM : loc21-rmap1-ctrlM : 1
+T: comm down : loc21-rmap1-ctrlM : loc21-rmap1-ctrlM : 1
+T: switch-ctrl down : loc21-rmap1-ctrlM : loc21-rmap1-ctrlH : 1
+T: down right : loc22-rmap1-ctrlH : loc22-rmap1-ctrlH : 1
+T: down down : loc22-rmap1-ctrlH : loc22-rmap1-ctrlH : 1
+T: down comm : loc22-rmap1-ctrlH : loc22-rmap1-ctrlH : 1
+T: down switch-ctrl : loc22-rmap1-ctrlH : loc22-rmap1-ctrlM : 1
+T: right down : loc22-rmap1-ctrlM : loc22-rmap1-ctrlM : 1
+T: down down : loc22-rmap1-ctrlM : loc22-rmap1-ctrlM : 1
+T: comm down : loc22-rmap1-ctrlM : loc22-rmap1-ctrlM : 1
+T: switch-ctrl down : loc22-rmap1-ctrlM : loc22-rmap1-ctrlH : 1
+T: down right : loc23-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: down down : loc23-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: down comm : loc23-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: down switch-ctrl : loc23-rmap1-ctrlH : loc23-rmap1-ctrlM : 1
+T: right down : loc23-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: down down : loc23-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: comm down : loc23-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: switch-ctrl down : loc23-rmap1-ctrlM : loc23-rmap1-ctrlH : 1
+T: right right : loc11-rmap1-ctrlH : loc12-rmap1-ctrlH : 1
+T: right down : loc11-rmap1-ctrlH : loc12-rmap1-ctrlH : 1
+T: right comm : loc11-rmap1-ctrlH : loc12-rmap1-ctrlH : 1
+T: right switch-ctrl : loc11-rmap1-ctrlH : loc12-rmap1-ctrlM : 1
+T: right right : loc11-rmap1-ctrlM : loc12-rmap1-ctrlM : 1
+T: down right : loc11-rmap1-ctrlM : loc12-rmap1-ctrlM : 1
+T: comm right : loc11-rmap1-ctrlM : loc12-rmap1-ctrlM : 1
+T: switch-ctrl right : loc11-rmap1-ctrlM : loc12-rmap1-ctrlH : 1
+T: right right : loc12-rmap1-ctrlH : loc13-rmap1-ctrlH : 1
+T: right down : loc12-rmap1-ctrlH : loc13-rmap1-ctrlH : 1
+T: right comm : loc12-rmap1-ctrlH : loc13-rmap1-ctrlH : 1
+T: right switch-ctrl : loc12-rmap1-ctrlH : loc13-rmap1-ctrlM : 1
+T: right right : loc12-rmap1-ctrlM : loc13-rmap1-ctrlM : 1
+T: down right : loc12-rmap1-ctrlM : loc13-rmap1-ctrlM : 1
+T: comm right : loc12-rmap1-ctrlM : loc13-rmap1-ctrlM : 1
+T: switch-ctrl right : loc12-rmap1-ctrlM : loc13-rmap1-ctrlH : 1
+T: right right : loc13-rmap1-ctrlH : loc13-rmap1-ctrlH : 1
+T: right down : loc13-rmap1-ctrlH : loc13-rmap1-ctrlH : 1
+T: right comm : loc13-rmap1-ctrlH : loc13-rmap1-ctrlH : 1
+T: right switch-ctrl : loc13-rmap1-ctrlH : loc13-rmap1-ctrlM : 1
+T: right right : loc13-rmap1-ctrlM : loc13-rmap1-ctrlM : 1
+T: down right : loc13-rmap1-ctrlM : loc13-rmap1-ctrlM : 1
+T: comm right : loc13-rmap1-ctrlM : loc13-rmap1-ctrlM : 1
+T: switch-ctrl right : loc13-rmap1-ctrlM : loc13-rmap1-ctrlH : 1
+T: right right : loc21-rmap1-ctrlH : loc22-rmap1-ctrlH : 1
+T: right down : loc21-rmap1-ctrlH : loc22-rmap1-ctrlH : 1
+T: right comm : loc21-rmap1-ctrlH : loc22-rmap1-ctrlH : 1
+T: right switch-ctrl : loc21-rmap1-ctrlH : loc22-rmap1-ctrlM : 1
+T: right right : loc21-rmap1-ctrlM : loc22-rmap1-ctrlM : 1
+T: down right : loc21-rmap1-ctrlM : loc22-rmap1-ctrlM : 1
+T: comm right : loc21-rmap1-ctrlM : loc22-rmap1-ctrlM : 1
+T: switch-ctrl right : loc21-rmap1-ctrlM : loc22-rmap1-ctrlH : 1
+T: right right : loc22-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: right down : loc22-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: right comm : loc22-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: right switch-ctrl : loc22-rmap1-ctrlH : loc23-rmap1-ctrlM : 1
+T: right right : loc22-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: down right : loc22-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: comm right : loc22-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: switch-ctrl right : loc22-rmap1-ctrlM : loc23-rmap1-ctrlH : 1
+T: right right : loc23-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: right down : loc23-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: right comm : loc23-rmap1-ctrlH : loc23-rmap1-ctrlH : 1
+T: right switch-ctrl : loc23-rmap1-ctrlH : loc23-rmap1-ctrlM : 1
+T: right right : loc23-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: down right : loc23-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: comm right : loc23-rmap1-ctrlM : loc23-rmap1-ctrlM : 1
+T: switch-ctrl right : loc23-rmap1-ctrlM : loc23-rmap1-ctrlH : 1
+T: down right : loc11-rmap2-ctrlH : loc21-rmap2-ctrlH : 1
+T: down down : loc11-rmap2-ctrlH : loc21-rmap2-ctrlH : 1
+T: down comm : loc11-rmap2-ctrlH : loc21-rmap2-ctrlH : 1
+T: down switch-ctrl : loc11-rmap2-ctrlH : loc21-rmap2-ctrlM : 1
+T: right down : loc11-rmap2-ctrlM : loc21-rmap2-ctrlM : 1
+T: down down : loc11-rmap2-ctrlM : loc21-rmap2-ctrlM : 1
+T: comm down : loc11-rmap2-ctrlM : loc21-rmap2-ctrlM : 1
+T: switch-ctrl down : loc11-rmap2-ctrlM : loc21-rmap2-ctrlH : 1
+T: down right : loc12-rmap2-ctrlH : loc22-rmap2-ctrlH : 1
+T: down down : loc12-rmap2-ctrlH : loc22-rmap2-ctrlH : 1
+T: down comm : loc12-rmap2-ctrlH : loc22-rmap2-ctrlH : 1
+T: down switch-ctrl : loc12-rmap2-ctrlH : loc22-rmap2-ctrlM : 1
+T: right down : loc12-rmap2-ctrlM : loc22-rmap2-ctrlM : 1
+T: down down : loc12-rmap2-ctrlM : loc22-rmap2-ctrlM : 1
+T: comm down : loc12-rmap2-ctrlM : loc22-rmap2-ctrlM : 1
+T: switch-ctrl down : loc12-rmap2-ctrlM : loc22-rmap2-ctrlH : 1
+T: down right : loc13-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: down down : loc13-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: down comm : loc13-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: down switch-ctrl : loc13-rmap2-ctrlH : loc23-rmap2-ctrlM : 1
+T: right down : loc13-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: down down : loc13-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: comm down : loc13-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: switch-ctrl down : loc13-rmap2-ctrlM : loc23-rmap2-ctrlH : 1
+T: down right : loc21-rmap2-ctrlH : loc21-rmap2-ctrlH : 1
+T: down down : loc21-rmap2-ctrlH : loc21-rmap2-ctrlH : 1
+T: down comm : loc21-rmap2-ctrlH : loc21-rmap2-ctrlH : 1
+T: down switch-ctrl : loc21-rmap2-ctrlH : loc21-rmap2-ctrlM : 1
+T: right down : loc21-rmap2-ctrlM : loc21-rmap2-ctrlM : 1
+T: down down : loc21-rmap2-ctrlM : loc21-rmap2-ctrlM : 1
+T: comm down : loc21-rmap2-ctrlM : loc21-rmap2-ctrlM : 1
+T: switch-ctrl down : loc21-rmap2-ctrlM : loc21-rmap2-ctrlH : 1
+T: down right : loc22-rmap2-ctrlH : loc22-rmap2-ctrlH : 1
+T: down down : loc22-rmap2-ctrlH : loc22-rmap2-ctrlH : 1
+T: down comm : loc22-rmap2-ctrlH : loc22-rmap2-ctrlH : 1
+T: down switch-ctrl : loc22-rmap2-ctrlH : loc22-rmap2-ctrlM : 1
+T: right down : loc22-rmap2-ctrlM : loc22-rmap2-ctrlM : 1
+T: down down : loc22-rmap2-ctrlM : loc22-rmap2-ctrlM : 1
+T: comm down : loc22-rmap2-ctrlM : loc22-rmap2-ctrlM : 1
+T: switch-ctrl down : loc22-rmap2-ctrlM : loc22-rmap2-ctrlH : 1
+T: down right : loc23-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: down down : loc23-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: down comm : loc23-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: down switch-ctrl : loc23-rmap2-ctrlH : loc23-rmap2-ctrlM : 1
+T: right down : loc23-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: down down : loc23-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: comm down : loc23-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: switch-ctrl down : loc23-rmap2-ctrlM : loc23-rmap2-ctrlH : 1
+T: right right : loc11-rmap2-ctrlH : loc12-rmap2-ctrlH : 1
+T: right down : loc11-rmap2-ctrlH : loc12-rmap2-ctrlH : 1
+T: right comm : loc11-rmap2-ctrlH : loc12-rmap2-ctrlH : 1
+T: right switch-ctrl : loc11-rmap2-ctrlH : loc12-rmap2-ctrlM : 1
+T: right right : loc11-rmap2-ctrlM : loc12-rmap2-ctrlM : 1
+T: down right : loc11-rmap2-ctrlM : loc12-rmap2-ctrlM : 1
+T: comm right : loc11-rmap2-ctrlM : loc12-rmap2-ctrlM : 1
+T: switch-ctrl right : loc11-rmap2-ctrlM : loc12-rmap2-ctrlH : 1
+T: right right : loc12-rmap2-ctrlH : loc13-rmap2-ctrlH : 1
+T: right down : loc12-rmap2-ctrlH : loc13-rmap2-ctrlH : 1
+T: right comm : loc12-rmap2-ctrlH : loc13-rmap2-ctrlH : 1
+T: right switch-ctrl : loc12-rmap2-ctrlH : loc13-rmap2-ctrlM : 1
+T: right right : loc12-rmap2-ctrlM : loc13-rmap2-ctrlM : 1
+T: down right : loc12-rmap2-ctrlM : loc13-rmap2-ctrlM : 1
+T: comm right : loc12-rmap2-ctrlM : loc13-rmap2-ctrlM : 1
+T: switch-ctrl right : loc12-rmap2-ctrlM : loc13-rmap2-ctrlH : 1
+T: right right : loc13-rmap2-ctrlH : loc13-rmap2-ctrlH : 1
+T: right down : loc13-rmap2-ctrlH : loc13-rmap2-ctrlH : 1
+T: right comm : loc13-rmap2-ctrlH : loc13-rmap2-ctrlH : 1
+T: right switch-ctrl : loc13-rmap2-ctrlH : loc13-rmap2-ctrlM : 1
+T: right right : loc13-rmap2-ctrlM : loc13-rmap2-ctrlM : 1
+T: down right : loc13-rmap2-ctrlM : loc13-rmap2-ctrlM : 1
+T: comm right : loc13-rmap2-ctrlM : loc13-rmap2-ctrlM : 1
+T: switch-ctrl right : loc13-rmap2-ctrlM : loc13-rmap2-ctrlH : 1
+T: right right : loc21-rmap2-ctrlH : loc22-rmap2-ctrlH : 1
+T: right down : loc21-rmap2-ctrlH : loc22-rmap2-ctrlH : 1
+T: right comm : loc21-rmap2-ctrlH : loc22-rmap2-ctrlH : 1
+T: right switch-ctrl : loc21-rmap2-ctrlH : loc22-rmap2-ctrlM : 1
+T: right right : loc21-rmap2-ctrlM : loc22-rmap2-ctrlM : 1
+T: down right : loc21-rmap2-ctrlM : loc22-rmap2-ctrlM : 1
+T: comm right : loc21-rmap2-ctrlM : loc22-rmap2-ctrlM : 1
+T: switch-ctrl right : loc21-rmap2-ctrlM : loc22-rmap2-ctrlH : 1
+T: right right : loc22-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: right down : loc22-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: right comm : loc22-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: right switch-ctrl : loc22-rmap2-ctrlH : loc23-rmap2-ctrlM : 1
+T: right right : loc22-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: down right : loc22-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: comm right : loc22-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: switch-ctrl right : loc22-rmap2-ctrlM : loc23-rmap2-ctrlH : 1
+T: right right : loc23-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: right down : loc23-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: right comm : loc23-rmap2-ctrlH : loc23-rmap2-ctrlH : 1
+T: right switch-ctrl : loc23-rmap2-ctrlH : loc23-rmap2-ctrlM : 1
+T: right right : loc23-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: down right : loc23-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: comm right : loc23-rmap2-ctrlM : loc23-rmap2-ctrlM : 1
+T: switch-ctrl right : loc23-rmap2-ctrlM : loc23-rmap2-ctrlH : 1
+O: * comm : loc11-rmap1-ctrlH : obs1 obs1: 1 
+O: * down : loc11-rmap1-ctrlH : obs1 obs1: .5 
+O: * down : loc11-rmap1-ctrlH : obs2 obs1: .5 
+O: * right : loc11-rmap1-ctrlH : obs1 obs1: .5 
+O: * right : loc11-rmap1-ctrlH : obs2 obs1: .5 
+O: * switch-ctrl : loc11-rmap1-ctrlH : obs1 obs1: .5 
+O: * switch-ctrl : loc11-rmap1-ctrlH : obs2 obs1: .5 
+O: * comm : loc11-rmap1-ctrlM : obs1 obs1: 1 
+O: * down : loc11-rmap1-ctrlM : obs1 obs1: .5 
+O: * down : loc11-rmap1-ctrlM : obs2 obs1: .5 
+O: * right : loc11-rmap1-ctrlM : obs1 obs1: .5 
+O: * right : loc11-rmap1-ctrlM : obs2 obs1: .5 
+O: * switch-ctrl : loc11-rmap1-ctrlM : obs1 obs1: .5 
+O: * switch-ctrl : loc11-rmap1-ctrlM : obs2 obs1: .5 
+O: * comm : loc12-rmap1-ctrlH : obs1 obs1: 1 
+O: * down : loc12-rmap1-ctrlH : obs1 obs1: .5 
+O: * down : loc12-rmap1-ctrlH : obs2 obs1: .5 
+O: * right : loc12-rmap1-ctrlH : obs1 obs1: .5 
+O: * right : loc12-rmap1-ctrlH : obs2 obs1: .5 
+O: * switch-ctrl : loc12-rmap1-ctrlH : obs1 obs1: .5 
+O: * switch-ctrl : loc12-rmap1-ctrlH : obs2 obs1: .5 
+O: * comm : loc12-rmap1-ctrlM : obs1 obs1: 1 
+O: * down : loc12-rmap1-ctrlM : obs1 obs1: .5 
+O: * down : loc12-rmap1-ctrlM : obs2 obs1: .5 
+O: * right : loc12-rmap1-ctrlM : obs1 obs1: .5 
+O: * right : loc12-rmap1-ctrlM : obs2 obs1: .5 
+O: * switch-ctrl : loc12-rmap1-ctrlM : obs1 obs1: .5 
+O: * switch-ctrl : loc12-rmap1-ctrlM : obs2 obs1: .5 
+O: * comm : loc13-rmap1-ctrlH : obs1 obs1: 1 
+O: * down : loc13-rmap1-ctrlH : obs1 obs1: .5 
+O: * down : loc13-rmap1-ctrlH : obs2 obs1: .5 
+O: * right : loc13-rmap1-ctrlH : obs1 obs1: .5 
+O: * right : loc13-rmap1-ctrlH : obs2 obs1: .5 
+O: * switch-ctrl : loc13-rmap1-ctrlH : obs1 obs1: .5 
+O: * switch-ctrl : loc13-rmap1-ctrlH : obs2 obs1: .5 
+O: * comm : loc13-rmap1-ctrlM : obs1 obs1: 1 
+O: * down : loc13-rmap1-ctrlM : obs1 obs1: .5 
+O: * down : loc13-rmap1-ctrlM : obs2 obs1: .5 
+O: * right : loc13-rmap1-ctrlM : obs1 obs1: .5 
+O: * right : loc13-rmap1-ctrlM : obs2 obs1: .5 
+O: * switch-ctrl : loc13-rmap1-ctrlM : obs1 obs1: .5 
+O: * switch-ctrl : loc13-rmap1-ctrlM : obs2 obs1: .5 
+O: * comm : loc21-rmap1-ctrlH : obs1 obs1: 1 
+O: * down : loc21-rmap1-ctrlH : obs1 obs1: .5 
+O: * down : loc21-rmap1-ctrlH : obs2 obs1: .5 
+O: * right : loc21-rmap1-ctrlH : obs1 obs1: .5 
+O: * right : loc21-rmap1-ctrlH : obs2 obs1: .5 
+O: * switch-ctrl : loc21-rmap1-ctrlH : obs1 obs1: .5 
+O: * switch-ctrl : loc21-rmap1-ctrlH : obs2 obs1: .5 
+O: * comm : loc21-rmap1-ctrlM : obs1 obs1: 1 
+O: * down : loc21-rmap1-ctrlM : obs1 obs1: .5 
+O: * down : loc21-rmap1-ctrlM : obs2 obs1: .5 
+O: * right : loc21-rmap1-ctrlM : obs1 obs1: .5 
+O: * right : loc21-rmap1-ctrlM : obs2 obs1: .5 
+O: * switch-ctrl : loc21-rmap1-ctrlM : obs1 obs1: .5 
+O: * switch-ctrl : loc21-rmap1-ctrlM : obs2 obs1: .5 
+O: * comm : loc22-rmap1-ctrlH : obs1 obs1: 1 
+O: * down : loc22-rmap1-ctrlH : obs1 obs1: .5 
+O: * down : loc22-rmap1-ctrlH : obs2 obs1: .5 
+O: * right : loc22-rmap1-ctrlH : obs1 obs1: .5 
+O: * right : loc22-rmap1-ctrlH : obs2 obs1: .5 
+O: * switch-ctrl : loc22-rmap1-ctrlH : obs1 obs1: .5 
+O: * switch-ctrl : loc22-rmap1-ctrlH : obs2 obs1: .5 
+O: * comm : loc22-rmap1-ctrlM : obs1 obs1: 1 
+O: * down : loc22-rmap1-ctrlM : obs1 obs1: .5 
+O: * down : loc22-rmap1-ctrlM : obs2 obs1: .5 
+O: * right : loc22-rmap1-ctrlM : obs1 obs1: .5 
+O: * right : loc22-rmap1-ctrlM : obs2 obs1: .5 
+O: * switch-ctrl : loc22-rmap1-ctrlM : obs1 obs1: .5 
+O: * switch-ctrl : loc22-rmap1-ctrlM : obs2 obs1: .5 
+O: * comm : loc23-rmap1-ctrlH : obs1 obs1: 1 
+O: * down : loc23-rmap1-ctrlH : obs1 obs1: .5 
+O: * down : loc23-rmap1-ctrlH : obs2 obs1: .5 
+O: * right : loc23-rmap1-ctrlH : obs1 obs1: .5 
+O: * right : loc23-rmap1-ctrlH : obs2 obs1: .5 
+O: * switch-ctrl : loc23-rmap1-ctrlH : obs1 obs1: .5 
+O: * switch-ctrl : loc23-rmap1-ctrlH : obs2 obs1: .5 
+O: * comm : loc23-rmap1-ctrlM : obs1 obs1: 1 
+O: * down : loc23-rmap1-ctrlM : obs1 obs1: .5 
+O: * down : loc23-rmap1-ctrlM : obs2 obs1: .5 
+O: * right : loc23-rmap1-ctrlM : obs1 obs1: .5 
+O: * right : loc23-rmap1-ctrlM : obs2 obs1: .5 
+O: * switch-ctrl : loc23-rmap1-ctrlM : obs1 obs1: .5 
+O: * switch-ctrl : loc23-rmap1-ctrlM : obs2 obs1: .5 
+O: * comm : loc11-rmap2-ctrlH : obs2 obs2: 1 
+O: * down : loc11-rmap2-ctrlH : obs1 obs2: .5 
+O: * down : loc11-rmap2-ctrlH : obs2 obs2: .5 
+O: * right : loc11-rmap2-ctrlH : obs1 obs2: .5 
+O: * right : loc11-rmap2-ctrlH : obs2 obs2: .5 
+O: * switch-ctrl : loc11-rmap2-ctrlH : obs1 obs2: .5 
+O: * switch-ctrl : loc11-rmap2-ctrlH : obs2 obs2: .5 
+O: * comm : loc11-rmap2-ctrlM : obs2 obs2: 1 
+O: * down : loc11-rmap2-ctrlM : obs1 obs2: .5 
+O: * down : loc11-rmap2-ctrlM : obs2 obs2: .5 
+O: * right : loc11-rmap2-ctrlM : obs1 obs2: .5 
+O: * right : loc11-rmap2-ctrlM : obs2 obs2: .5 
+O: * switch-ctrl : loc11-rmap2-ctrlM : obs1 obs2: .5 
+O: * switch-ctrl : loc11-rmap2-ctrlM : obs2 obs2: .5 
+O: * comm : loc12-rmap2-ctrlH : obs2 obs2: 1 
+O: * down : loc12-rmap2-ctrlH : obs1 obs2: .5 
+O: * down : loc12-rmap2-ctrlH : obs2 obs2: .5 
+O: * right : loc12-rmap2-ctrlH : obs1 obs2: .5 
+O: * right : loc12-rmap2-ctrlH : obs2 obs2: .5 
+O: * switch-ctrl : loc12-rmap2-ctrlH : obs1 obs2: .5 
+O: * switch-ctrl : loc12-rmap2-ctrlH : obs2 obs2: .5 
+O: * comm : loc12-rmap2-ctrlM : obs2 obs2: 1 
+O: * down : loc12-rmap2-ctrlM : obs1 obs2: .5 
+O: * down : loc12-rmap2-ctrlM : obs2 obs2: .5 
+O: * right : loc12-rmap2-ctrlM : obs1 obs2: .5 
+O: * right : loc12-rmap2-ctrlM : obs2 obs2: .5 
+O: * switch-ctrl : loc12-rmap2-ctrlM : obs1 obs2: .5 
+O: * switch-ctrl : loc12-rmap2-ctrlM : obs2 obs2: .5 
+O: * comm : loc13-rmap2-ctrlH : obs2 obs2: 1 
+O: * down : loc13-rmap2-ctrlH : obs1 obs2: .5 
+O: * down : loc13-rmap2-ctrlH : obs2 obs2: .5 
+O: * right : loc13-rmap2-ctrlH : obs1 obs2: .5 
+O: * right : loc13-rmap2-ctrlH : obs2 obs2: .5 
+O: * switch-ctrl : loc13-rmap2-ctrlH : obs1 obs2: .5 
+O: * switch-ctrl : loc13-rmap2-ctrlH : obs2 obs2: .5 
+O: * comm : loc13-rmap2-ctrlM : obs2 obs2: 1 
+O: * down : loc13-rmap2-ctrlM : obs1 obs2: .5 
+O: * down : loc13-rmap2-ctrlM : obs2 obs2: .5 
+O: * right : loc13-rmap2-ctrlM : obs1 obs2: .5 
+O: * right : loc13-rmap2-ctrlM : obs2 obs2: .5 
+O: * switch-ctrl : loc13-rmap2-ctrlM : obs1 obs2: .5 
+O: * switch-ctrl : loc13-rmap2-ctrlM : obs2 obs2: .5 
+O: * comm : loc21-rmap2-ctrlH : obs2 obs2: 1 
+O: * down : loc21-rmap2-ctrlH : obs1 obs2: .5 
+O: * down : loc21-rmap2-ctrlH : obs2 obs2: .5 
+O: * right : loc21-rmap2-ctrlH : obs1 obs2: .5 
+O: * right : loc21-rmap2-ctrlH : obs2 obs2: .5 
+O: * switch-ctrl : loc21-rmap2-ctrlH : obs1 obs2: .5 
+O: * switch-ctrl : loc21-rmap2-ctrlH : obs2 obs2: .5 
+O: * comm : loc21-rmap2-ctrlM : obs2 obs2: 1 
+O: * down : loc21-rmap2-ctrlM : obs1 obs2: .5 
+O: * down : loc21-rmap2-ctrlM : obs2 obs2: .5 
+O: * right : loc21-rmap2-ctrlM : obs1 obs2: .5 
+O: * right : loc21-rmap2-ctrlM : obs2 obs2: .5 
+O: * switch-ctrl : loc21-rmap2-ctrlM : obs1 obs2: .5 
+O: * switch-ctrl : loc21-rmap2-ctrlM : obs2 obs2: .5 
+O: * comm : loc22-rmap2-ctrlH : obs2 obs2: 1 
+O: * down : loc22-rmap2-ctrlH : obs1 obs2: .5 
+O: * down : loc22-rmap2-ctrlH : obs2 obs2: .5 
+O: * right : loc22-rmap2-ctrlH : obs1 obs2: .5 
+O: * right : loc22-rmap2-ctrlH : obs2 obs2: .5 
+O: * switch-ctrl : loc22-rmap2-ctrlH : obs1 obs2: .5 
+O: * switch-ctrl : loc22-rmap2-ctrlH : obs2 obs2: .5 
+O: * comm : loc22-rmap2-ctrlM : obs2 obs2: 1 
+O: * down : loc22-rmap2-ctrlM : obs1 obs2: .5 
+O: * down : loc22-rmap2-ctrlM : obs2 obs2: .5 
+O: * right : loc22-rmap2-ctrlM : obs1 obs2: .5 
+O: * right : loc22-rmap2-ctrlM : obs2 obs2: .5 
+O: * switch-ctrl : loc22-rmap2-ctrlM : obs1 obs2: .5 
+O: * switch-ctrl : loc22-rmap2-ctrlM : obs2 obs2: .5 
+O: * comm : loc23-rmap2-ctrlH : obs2 obs2: 1 
+O: * down : loc23-rmap2-ctrlH : obs1 obs2: .5 
+O: * down : loc23-rmap2-ctrlH : obs2 obs2: .5 
+O: * right : loc23-rmap2-ctrlH : obs1 obs2: .5 
+O: * right : loc23-rmap2-ctrlH : obs2 obs2: .5 
+O: * switch-ctrl : loc23-rmap2-ctrlH : obs1 obs2: .5 
+O: * switch-ctrl : loc23-rmap2-ctrlH : obs2 obs2: .5 
+O: * comm : loc23-rmap2-ctrlM : obs2 obs2: 1 
+O: * down : loc23-rmap2-ctrlM : obs1 obs2: .5 
+O: * down : loc23-rmap2-ctrlM : obs2 obs2: .5 
+O: * right : loc23-rmap2-ctrlM : obs1 obs2: .5 
+O: * right : loc23-rmap2-ctrlM : obs2 obs2: .5 
+O: * switch-ctrl : loc23-rmap2-ctrlM : obs1 obs2: .5 
+O: * switch-ctrl : loc23-rmap2-ctrlM : obs2 obs2: .5 
+R: down right : loc11-rmap1-ctrlH : * : * : -1
+R: down down : loc11-rmap1-ctrlH : * : * : -1
+R: down comm : loc11-rmap1-ctrlH : * : * : -6
+R: down switch-ctrl : loc11-rmap1-ctrlH : * : * : -2
+R: right down : loc11-rmap1-ctrlM : * : * : -1
+R: down down : loc11-rmap1-ctrlM : * : * : -1
+R: comm down : loc11-rmap1-ctrlM : * : * : -6
+R: switch-ctrl down : loc11-rmap1-ctrlM : * : * : -2
+R: down right : loc12-rmap1-ctrlH : * : * : -5
+R: down down : loc12-rmap1-ctrlH : * : * : -5
+R: down comm : loc12-rmap1-ctrlH : * : * : -10
+R: down switch-ctrl : loc12-rmap1-ctrlH : * : * : -6
+R: right down : loc12-rmap1-ctrlM : * : * : -5
+R: down down : loc12-rmap1-ctrlM : * : * : -5
+R: comm down : loc12-rmap1-ctrlM : * : * : -10
+R: switch-ctrl down : loc12-rmap1-ctrlM : * : * : -6
+R: down right : loc13-rmap1-ctrlH : * : * : 100
+R: down down : loc13-rmap1-ctrlH : * : * : 100
+R: down comm : loc13-rmap1-ctrlH : * : * : 95
+R: down switch-ctrl : loc13-rmap1-ctrlH : * : * : 99
+R: right down : loc13-rmap1-ctrlM : * : * : 100
+R: down down : loc13-rmap1-ctrlM : * : * : 100
+R: comm down : loc13-rmap1-ctrlM : * : * : 95
+R: switch-ctrl down : loc13-rmap1-ctrlM : * : * : 99
+R: down right : loc21-rmap1-ctrlH : * : * : 0
+R: down down : loc21-rmap1-ctrlH : * : * : 0
+R: down comm : loc21-rmap1-ctrlH : * : * : -5
+R: down switch-ctrl : loc21-rmap1-ctrlH : * : * : -1
+R: right down : loc21-rmap1-ctrlM : * : * : 0
+R: down down : loc21-rmap1-ctrlM : * : * : 0
+R: comm down : loc21-rmap1-ctrlM : * : * : -5
+R: switch-ctrl down : loc21-rmap1-ctrlM : * : * : -1
+R: down right : loc22-rmap1-ctrlH : * : * : 0
+R: down down : loc22-rmap1-ctrlH : * : * : 0
+R: down comm : loc22-rmap1-ctrlH : * : * : -5
+R: down switch-ctrl : loc22-rmap1-ctrlH : * : * : -1
+R: right down : loc22-rmap1-ctrlM : * : * : 0
+R: down down : loc22-rmap1-ctrlM : * : * : 0
+R: comm down : loc22-rmap1-ctrlM : * : * : -5
+R: switch-ctrl down : loc22-rmap1-ctrlM : * : * : -1
+R: down right : loc23-rmap1-ctrlH : * : * : 0
+R: down down : loc23-rmap1-ctrlH : * : * : 0
+R: down comm : loc23-rmap1-ctrlH : * : * : -5
+R: down switch-ctrl : loc23-rmap1-ctrlH : * : * : -1
+R: right down : loc23-rmap1-ctrlM : * : * : 0
+R: down down : loc23-rmap1-ctrlM : * : * : 0
+R: comm down : loc23-rmap1-ctrlM : * : * : -5
+R: switch-ctrl down : loc23-rmap1-ctrlM : * : * : -1
+R: right right : loc11-rmap1-ctrlH : * : * : -1
+R: right down : loc11-rmap1-ctrlH : * : * : -1
+R: right comm : loc11-rmap1-ctrlH : * : * : -6
+R: right switch-ctrl : loc11-rmap1-ctrlH : * : * : -2
+R: right right : loc11-rmap1-ctrlM : * : * : -1
+R: down right : loc11-rmap1-ctrlM : * : * : -1
+R: comm right : loc11-rmap1-ctrlM : * : * : -6
+R: switch-ctrl right : loc11-rmap1-ctrlM : * : * : -2
+R: right right : loc12-rmap1-ctrlH : * : * : -1
+R: right down : loc12-rmap1-ctrlH : * : * : -1
+R: right comm : loc12-rmap1-ctrlH : * : * : -6
+R: right switch-ctrl : loc12-rmap1-ctrlH : * : * : -2
+R: right right : loc12-rmap1-ctrlM : * : * : -1
+R: down right : loc12-rmap1-ctrlM : * : * : -1
+R: comm right : loc12-rmap1-ctrlM : * : * : -6
+R: switch-ctrl right : loc12-rmap1-ctrlM : * : * : -2
+R: right right : loc13-rmap1-ctrlH : * : * : 0
+R: right down : loc13-rmap1-ctrlH : * : * : 0
+R: right comm : loc13-rmap1-ctrlH : * : * : -5
+R: right switch-ctrl : loc13-rmap1-ctrlH : * : * : -1
+R: right right : loc13-rmap1-ctrlM : * : * : 0
+R: down right : loc13-rmap1-ctrlM : * : * : 0
+R: comm right : loc13-rmap1-ctrlM : * : * : -5
+R: switch-ctrl right : loc13-rmap1-ctrlM : * : * : -1
+R: right right : loc21-rmap1-ctrlH : * : * : -5
+R: right down : loc21-rmap1-ctrlH : * : * : -5
+R: right comm : loc21-rmap1-ctrlH : * : * : -10
+R: right switch-ctrl : loc21-rmap1-ctrlH : * : * : -6
+R: right right : loc21-rmap1-ctrlM : * : * : -5
+R: down right : loc21-rmap1-ctrlM : * : * : -5
+R: comm right : loc21-rmap1-ctrlM : * : * : -10
+R: switch-ctrl right : loc21-rmap1-ctrlM : * : * : -6
+R: right right : loc22-rmap1-ctrlH : * : * : 100
+R: right down : loc22-rmap1-ctrlH : * : * : 100
+R: right comm : loc22-rmap1-ctrlH : * : * : 95
+R: right switch-ctrl : loc22-rmap1-ctrlH : * : * : 99
+R: right right : loc22-rmap1-ctrlM : * : * : 100
+R: down right : loc22-rmap1-ctrlM : * : * : 100
+R: comm right : loc22-rmap1-ctrlM : * : * : 95
+R: switch-ctrl right : loc22-rmap1-ctrlM : * : * : 99
+R: right right : loc23-rmap1-ctrlH : * : * : 0
+R: right down : loc23-rmap1-ctrlH : * : * : 0
+R: right comm : loc23-rmap1-ctrlH : * : * : -5
+R: right switch-ctrl : loc23-rmap1-ctrlH : * : * : -1
+R: right right : loc23-rmap1-ctrlM : * : * : 0
+R: down right : loc23-rmap1-ctrlM : * : * : 0
+R: comm right : loc23-rmap1-ctrlM : * : * : -5
+R: switch-ctrl right : loc23-rmap1-ctrlM : * : * : -1
+R: down right : loc11-rmap2-ctrlH : * : * : -1
+R: down down : loc11-rmap2-ctrlH : * : * : -1
+R: down comm : loc11-rmap2-ctrlH : * : * : -6
+R: down switch-ctrl : loc11-rmap2-ctrlH : * : * : -2
+R: right down : loc11-rmap2-ctrlM : * : * : -1
+R: down down : loc11-rmap2-ctrlM : * : * : -1
+R: comm down : loc11-rmap2-ctrlM : * : * : -6
+R: switch-ctrl down : loc11-rmap2-ctrlM : * : * : -2
+R: down right : loc12-rmap2-ctrlH : * : * : -1
+R: down down : loc12-rmap2-ctrlH : * : * : -1
+R: down comm : loc12-rmap2-ctrlH : * : * : -6
+R: down switch-ctrl : loc12-rmap2-ctrlH : * : * : -2
+R: right down : loc12-rmap2-ctrlM : * : * : -1
+R: down down : loc12-rmap2-ctrlM : * : * : -1
+R: comm down : loc12-rmap2-ctrlM : * : * : -6
+R: switch-ctrl down : loc12-rmap2-ctrlM : * : * : -2
+R: down right : loc13-rmap2-ctrlH : * : * : 100
+R: down down : loc13-rmap2-ctrlH : * : * : 100
+R: down comm : loc13-rmap2-ctrlH : * : * : 95
+R: down switch-ctrl : loc13-rmap2-ctrlH : * : * : 99
+R: right down : loc13-rmap2-ctrlM : * : * : 100
+R: down down : loc13-rmap2-ctrlM : * : * : 100
+R: comm down : loc13-rmap2-ctrlM : * : * : 95
+R: switch-ctrl down : loc13-rmap2-ctrlM : * : * : 99
+R: down right : loc21-rmap2-ctrlH : * : * : 0
+R: down down : loc21-rmap2-ctrlH : * : * : 0
+R: down comm : loc21-rmap2-ctrlH : * : * : -5
+R: down switch-ctrl : loc21-rmap2-ctrlH : * : * : -1
+R: right down : loc21-rmap2-ctrlM : * : * : 0
+R: down down : loc21-rmap2-ctrlM : * : * : 0
+R: comm down : loc21-rmap2-ctrlM : * : * : -5
+R: switch-ctrl down : loc21-rmap2-ctrlM : * : * : -1
+R: down right : loc22-rmap2-ctrlH : * : * : 0
+R: down down : loc22-rmap2-ctrlH : * : * : 0
+R: down comm : loc22-rmap2-ctrlH : * : * : -5
+R: down switch-ctrl : loc22-rmap2-ctrlH : * : * : -1
+R: right down : loc22-rmap2-ctrlM : * : * : 0
+R: down down : loc22-rmap2-ctrlM : * : * : 0
+R: comm down : loc22-rmap2-ctrlM : * : * : -5
+R: switch-ctrl down : loc22-rmap2-ctrlM : * : * : -1
+R: down right : loc23-rmap2-ctrlH : * : * : 0
+R: down down : loc23-rmap2-ctrlH : * : * : 0
+R: down comm : loc23-rmap2-ctrlH : * : * : -5
+R: down switch-ctrl : loc23-rmap2-ctrlH : * : * : -1
+R: right down : loc23-rmap2-ctrlM : * : * : 0
+R: down down : loc23-rmap2-ctrlM : * : * : 0
+R: comm down : loc23-rmap2-ctrlM : * : * : -5
+R: switch-ctrl down : loc23-rmap2-ctrlM : * : * : -1
+R: right right : loc11-rmap2-ctrlH : * : * : -1
+R: right down : loc11-rmap2-ctrlH : * : * : -1
+R: right comm : loc11-rmap2-ctrlH : * : * : -6
+R: right switch-ctrl : loc11-rmap2-ctrlH : * : * : -2
+R: right right : loc11-rmap2-ctrlM : * : * : -1
+R: down right : loc11-rmap2-ctrlM : * : * : -1
+R: comm right : loc11-rmap2-ctrlM : * : * : -6
+R: switch-ctrl right : loc11-rmap2-ctrlM : * : * : -2
+R: right right : loc12-rmap2-ctrlH : * : * : -5
+R: right down : loc12-rmap2-ctrlH : * : * : -5
+R: right comm : loc12-rmap2-ctrlH : * : * : -10
+R: right switch-ctrl : loc12-rmap2-ctrlH : * : * : -6
+R: right right : loc12-rmap2-ctrlM : * : * : -5
+R: down right : loc12-rmap2-ctrlM : * : * : -5
+R: comm right : loc12-rmap2-ctrlM : * : * : -10
+R: switch-ctrl right : loc12-rmap2-ctrlM : * : * : -6
+R: right right : loc13-rmap2-ctrlH : * : * : 0
+R: right down : loc13-rmap2-ctrlH : * : * : 0
+R: right comm : loc13-rmap2-ctrlH : * : * : -5
+R: right switch-ctrl : loc13-rmap2-ctrlH : * : * : -1
+R: right right : loc13-rmap2-ctrlM : * : * : 0
+R: down right : loc13-rmap2-ctrlM : * : * : 0
+R: comm right : loc13-rmap2-ctrlM : * : * : -5
+R: switch-ctrl right : loc13-rmap2-ctrlM : * : * : -1
+R: right right : loc21-rmap2-ctrlH : * : * : -1
+R: right down : loc21-rmap2-ctrlH : * : * : -1
+R: right comm : loc21-rmap2-ctrlH : * : * : -6
+R: right switch-ctrl : loc21-rmap2-ctrlH : * : * : -2
+R: right right : loc21-rmap2-ctrlM : * : * : -1
+R: down right : loc21-rmap2-ctrlM : * : * : -1
+R: comm right : loc21-rmap2-ctrlM : * : * : -6
+R: switch-ctrl right : loc21-rmap2-ctrlM : * : * : -2
+R: right right : loc22-rmap2-ctrlH : * : * : 100
+R: right down : loc22-rmap2-ctrlH : * : * : 100
+R: right comm : loc22-rmap2-ctrlH : * : * : 95
+R: right switch-ctrl : loc22-rmap2-ctrlH : * : * : 99
+R: right right : loc22-rmap2-ctrlM : * : * : 100
+R: down right : loc22-rmap2-ctrlM : * : * : 100
+R: comm right : loc22-rmap2-ctrlM : * : * : 95
+R: switch-ctrl right : loc22-rmap2-ctrlM : * : * : 99
+R: right right : loc23-rmap2-ctrlH : * : * : 0
+R: right down : loc23-rmap2-ctrlH : * : * : 0
+R: right comm : loc23-rmap2-ctrlH : * : * : -5
+R: right switch-ctrl : loc23-rmap2-ctrlH : * : * : -1
+R: right right : loc23-rmap2-ctrlM : * : * : 0
+R: down right : loc23-rmap2-ctrlM : * : * : 0
+R: comm right : loc23-rmap2-ctrlM : * : * : -5
+R: switch-ctrl right : loc23-rmap2-ctrlM : * : * : -1
+

@@ -43,7 +43,7 @@ actions = ["down", "right", "communicate", "take-control"]
 
 writer = GWDPOMDP(3,3,rmap_dict, cost_dict)
 
-start_state = [[1,1],"rmap1","M"]
+start_state = [[1,1],"rmap1","H"]
 
 dpomdp = writer.write(start_state, possible_rmaps, actions)
 

@@ -1,17 +1,34 @@
 def state_to_string(state):
-    [location, rmap_name, control] = state
-    [i,j] = location
-    name = "loc" + str(i) + str(j) + "-" + rmap_name + "-" + control[0]
-    return name
+    if (isinstance(state, list)):
+        [location, rmap_name, control] = state
+        [i,j] = location
+        name = "loc" + str(i) + str(j) + "-" + rmap_name + "-" + control[0]
+        return name
+    else:
+        #hopefully, this means it's already a string
+        return state
+
+def trans_string(h_action, m_action, start, next, prob):
+    tline = "T : " + h_action + " " + m_action + " : " 
+    tline += state_to_string(start) + " : "
+    tline += state_to_string(next) + " : "
+    tline += str(prob) + "\n"
+    return tline
+
+def rew_string(h_action, m_action, start, reward):
+    r_str = "R: " + h_action + " " + m_action + " : "
+    r_str += state_to_string(start) + " : * : * : "
+    r_str += str(reward) + "\n"
+    return r_str
 
 def is_allowed_machine(start_state, action):
     #returns true if an action is allowed
     [start_loc, start_rmap_name, start_control] = start_state
     ctrl_actions = ["up", "down", "left", "right"]
     no_ctrl_actions = ["take-control", "communicate"]
-    if start_control == "M" & action in ctrl_actions:
+    if (start_control == "M") & (action in ctrl_actions):
         return True
-    elif start_control == "H" & action in no_ctrl_actions:
+    elif (start_control == "H") & (action in no_ctrl_actions):
         return True
     else:
         return False
@@ -21,9 +38,9 @@ def is_allowed_human(start_state, action):
     [start_loc, start_rmap_name, start_control] = start_state
     ctrl_actions = ["up", "down", "left", "right"]
     no_ctrl_actions = ["take-control", "communicate"]
-    if start_control == "H" & action in ctrl_actions:
+    if (start_control == "H") & (action in ctrl_actions):
         return True
-    elif start_control == "M" & action in no_ctrl_actions:
+    elif (start_control == "M") & (action in no_ctrl_actions):
         return True
     else:
         return False
@@ -99,7 +116,7 @@ class GWDPOMDP:
         next_state = self.transition(start_state, h_action, m_action)
         reward = self.get_reward(next_state, action)
         r_str = "R: " + h_action + " " + m_action + " : "
-        r_str += state_to_string(next_state) + " : * : * : "
+        r_str += state_to_string(start_state) + " : * : * : "
         r_str += str(reward) + "\n"
         return r_str
         
@@ -158,12 +175,14 @@ class GWDPOMDP:
         transitions = ""
         observations = ""
         rewards = ""
-        for h_action in actions:
+        #non_sink_states = states - ["sink"]
+        for s in states:
             for m_action in actions:
-                for s in states:
-                    transitions += self.get_transition_line(s,h_action,m_action)
-                    observations += self.get_observation_strings(s,[h_action,m_action],possible_rmaps)
-                    rewards += self.get_reward_line(s,[h_action,m_action])
+                for h_action in actions:
+                    if (is_allowed_human(s,h_action) & is_allowed_machine(s,m_action)):
+                        transitions += self.get_transition_line(s,h_action,m_action)
+                        observations += self.get_observation_strings(s,[h_action,m_action],possible_rmaps)
+                        rewards += self.get_reward_line(s,[h_action,m_action])         
         output += transitions
         output += observations
         output += rewards

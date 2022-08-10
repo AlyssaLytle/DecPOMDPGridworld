@@ -2,7 +2,7 @@ agents: 2
 discount: 1
 values: reward
 states: loc11-rmap1-H loc11-rmap1-M loc12-rmap1-H loc12-rmap1-M loc13-rmap1-H loc13-rmap1-M loc21-rmap1-H loc21-rmap1-M loc22-rmap1-H loc22-rmap1-M loc23-rmap1-H loc23-rmap1-M loc31-rmap1-H loc31-rmap1-M loc32-rmap1-H loc32-rmap1-M loc33-rmap1-H loc33-rmap1-M loc11-rmap2-H loc11-rmap2-M loc12-rmap2-H loc12-rmap2-M loc13-rmap2-H loc13-rmap2-M loc21-rmap2-H loc21-rmap2-M loc22-rmap2-H loc22-rmap2-M loc23-rmap2-H loc23-rmap2-M loc31-rmap2-H loc31-rmap2-M loc32-rmap2-H loc32-rmap2-M loc33-rmap2-H loc33-rmap2-M
-start include: loc11-rmap1-H
+start include: loc11-rmap1-H loc11-rmap2-H
 actions: 
 down right communicate take-control
 down right communicate take-control

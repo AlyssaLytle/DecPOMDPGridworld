@@ -179,15 +179,18 @@ class GWDPOMDP:
         for s in states:
             for m_action in actions:
                 for h_action in actions:
-                    if (is_allowed_human(s,h_action) & is_allowed_machine(s,m_action)):
-                        transitions += self.get_transition_line(s,h_action,m_action)
-                        observations += self.get_observation_strings(s,[h_action,m_action],possible_rmaps)
-                        rewards += self.get_reward_line(s,[h_action,m_action])         
+                    transitions += self.get_transition_line(s,h_action,m_action)
+                    observations += self.get_observation_strings(s,[h_action,m_action],possible_rmaps)
+                    rewards += self.get_reward_line(s,[h_action,m_action])
+                    # if (is_allowed_human(s,h_action) & is_allowed_machine(s,m_action)):
+                    #     transitions += self.get_transition_line(s,h_action,m_action)
+                    #     observations += self.get_observation_strings(s,[h_action,m_action],possible_rmaps)
+                    #     rewards += self.get_reward_line(s,[h_action,m_action])         
         output += transitions
         output += observations
         output += rewards
         return output
-                    
+    
                     
                     
                       

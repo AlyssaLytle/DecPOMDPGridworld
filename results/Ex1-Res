@@ -1,0 +1,103 @@
+JointPolicyPureVector: 
+JPolComponent_VectorImplementation index 450291828923551742
+Policy for agent 0 (index 419366945):
+() --> right
+(rmap1) --> communicate
+(rmap2) --> down
+(rmap1,rmap1) --> take-control
+(rmap1,rmap2) --> take-control
+(rmap2,rmap1) --> take-control
+(rmap2,rmap2) --> take-control
+(rmap1,rmap1,rmap1) --> down
+(rmap1,rmap1,rmap2) --> down
+(rmap1,rmap2,rmap1) --> communicate
+(rmap1,rmap2,rmap2) --> down
+(rmap2,rmap1,rmap1) --> down
+(rmap2,rmap1,rmap2) --> communicate
+(rmap2,rmap2,rmap1) --> down
+(rmap2,rmap2,rmap2) --> right
+Policy for agent 1 (index 473944062):
+() --> right
+(rmap1) --> take-control
+(rmap2) --> down
+(rmap1,rmap1) --> down
+(rmap1,rmap2) --> take-control
+(rmap2,rmap1) --> take-control
+(rmap2,rmap2) --> take-control
+(rmap1,rmap1,rmap1) --> take-control
+(rmap1,rmap1,rmap2) --> down
+(rmap1,rmap2,rmap1) --> take-control
+(rmap1,rmap2,rmap2) --> take-control
+(rmap2,rmap1,rmap1) --> take-control
+(rmap2,rmap1,rmap2) --> take-control
+(rmap2,rmap2,rmap1) --> take-control
+(rmap2,rmap2,rmap2) --> communicate
+
+digraph policyAgent0 {
+edge [dir=none];
+node0 [ label="right" ];
+node1 [ label="communicate" ];
+node2 [ label="down" ];
+node3 [ label="take-control" ];
+node4 [ label="take-control" ];
+node5 [ label="take-control" ];
+node6 [ label="take-control" ];
+node7 [ label="down" ];
+node8 [ label="down" ];
+node9 [ label="communicate" ];
+node10 [ label="down" ];
+node11 [ label="down" ];
+node12 [ label="communicate" ];
+node13 [ label="down" ];
+node14 [ label="right" ];
+node0 -> node1 [label="rmap1"];
+node0 -> node2 [label="rmap2"];
+node1 -> node3 [label="rmap1"];
+node1 -> node4 [label="rmap2"];
+node2 -> node5 [label="rmap1"];
+node2 -> node6 [label="rmap2"];
+node3 -> node7 [label="rmap1"];
+node3 -> node8 [label="rmap2"];
+node4 -> node9 [label="rmap1"];
+node4 -> node10 [label="rmap2"];
+node5 -> node11 [label="rmap1"];
+node5 -> node12 [label="rmap2"];
+node6 -> node13 [label="rmap1"];
+node6 -> node14 [label="rmap2"];
+}
+
+digraph policyAgent1 {
+edge [dir=none];
+node0 [ label="right" ];
+node1 [ label="take-control" ];
+node2 [ label="down" ];
+node3 [ label="down" ];
+node4 [ label="take-control" ];
+node5 [ label="take-control" ];
+node6 [ label="take-control" ];
+node7 [ label="take-control" ];
+node8 [ label="down" ];
+node9 [ label="take-control" ];
+node10 [ label="take-control" ];
+node11 [ label="take-control" ];
+node12 [ label="take-control" ];
+node13 [ label="take-control" ];
+node14 [ label="communicate" ];
+node0 -> node1 [label="rmap1"];
+node0 -> node2 [label="rmap2"];
+node1 -> node3 [label="rmap1"];
+node1 -> node4 [label="rmap2"];
+node2 -> node5 [label="rmap1"];
+node2 -> node6 [label="rmap2"];
+node3 -> node7 [label="rmap1"];
+node3 -> node8 [label="rmap2"];
+node4 -> node9 [label="rmap1"];
+node4 -> node10 [label="rmap2"];
+node5 -> node11 [label="rmap1"];
+node5 -> node12 [label="rmap2"];
+node6 -> node13 [label="rmap1"];
+node6 -> node14 [label="rmap2"];
+}
+
+Sampled value =  0 (nrSimRuns=10000)
+Computed value = 0

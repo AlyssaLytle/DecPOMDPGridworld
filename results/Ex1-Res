@@ -1,55 +1,55 @@
 JointPolicyPureVector: 
-JPolComponent_VectorImplementation index 450291828923551742
-Policy for agent 0 (index 419366945):
+JPolComponent_VectorImplementation index 378302368816586619
+Policy for agent 0 (index 352321536):
 () --> right
-(rmap1) --> communicate
-(rmap2) --> down
-(rmap1,rmap1) --> take-control
-(rmap1,rmap2) --> take-control
-(rmap2,rmap1) --> take-control
-(rmap2,rmap2) --> take-control
+(rmap1) --> right
+(rmap2) --> right
+(rmap1,rmap1) --> down
+(rmap1,rmap2) --> down
+(rmap2,rmap1) --> down
+(rmap2,rmap2) --> down
 (rmap1,rmap1,rmap1) --> down
 (rmap1,rmap1,rmap2) --> down
-(rmap1,rmap2,rmap1) --> communicate
+(rmap1,rmap2,rmap1) --> down
 (rmap1,rmap2,rmap2) --> down
 (rmap2,rmap1,rmap1) --> down
-(rmap2,rmap1,rmap2) --> communicate
+(rmap2,rmap1,rmap2) --> down
 (rmap2,rmap2,rmap1) --> down
-(rmap2,rmap2,rmap2) --> right
-Policy for agent 1 (index 473944062):
-() --> right
-(rmap1) --> take-control
-(rmap2) --> down
+(rmap2,rmap2,rmap2) --> down
+Policy for agent 1 (index 117464955):
+() --> down
+(rmap1) --> right
+(rmap2) --> take-control
 (rmap1,rmap1) --> down
-(rmap1,rmap2) --> take-control
-(rmap2,rmap1) --> take-control
-(rmap2,rmap2) --> take-control
-(rmap1,rmap1,rmap1) --> take-control
-(rmap1,rmap1,rmap2) --> down
+(rmap1,rmap2) --> down
+(rmap2,rmap1) --> down
+(rmap2,rmap2) --> down
+(rmap1,rmap1,rmap1) --> right
+(rmap1,rmap1,rmap2) --> right
 (rmap1,rmap2,rmap1) --> take-control
 (rmap1,rmap2,rmap2) --> take-control
-(rmap2,rmap1,rmap1) --> take-control
+(rmap2,rmap1,rmap1) --> right
 (rmap2,rmap1,rmap2) --> take-control
-(rmap2,rmap2,rmap1) --> take-control
-(rmap2,rmap2,rmap2) --> communicate
+(rmap2,rmap2,rmap1) --> communicate
+(rmap2,rmap2,rmap2) --> take-control
 
 digraph policyAgent0 {
 edge [dir=none];
 node0 [ label="right" ];
-node1 [ label="communicate" ];
-node2 [ label="down" ];
-node3 [ label="take-control" ];
-node4 [ label="take-control" ];
-node5 [ label="take-control" ];
-node6 [ label="take-control" ];
+node1 [ label="right" ];
+node2 [ label="right" ];
+node3 [ label="down" ];
+node4 [ label="down" ];
+node5 [ label="down" ];
+node6 [ label="down" ];
 node7 [ label="down" ];
 node8 [ label="down" ];
-node9 [ label="communicate" ];
+node9 [ label="down" ];
 node10 [ label="down" ];
 node11 [ label="down" ];
-node12 [ label="communicate" ];
+node12 [ label="down" ];
 node13 [ label="down" ];
-node14 [ label="right" ];
+node14 [ label="down" ];
 node0 -> node1 [label="rmap1"];
 node0 -> node2 [label="rmap2"];
 node1 -> node3 [label="rmap1"];
@@ -68,21 +68,21 @@ node6 -> node14 [label="rmap2"];
 
 digraph policyAgent1 {
 edge [dir=none];
-node0 [ label="right" ];
-node1 [ label="take-control" ];
-node2 [ label="down" ];
+node0 [ label="down" ];
+node1 [ label="right" ];
+node2 [ label="take-control" ];
 node3 [ label="down" ];
-node4 [ label="take-control" ];
-node5 [ label="take-control" ];
-node6 [ label="take-control" ];
-node7 [ label="take-control" ];
-node8 [ label="down" ];
+node4 [ label="down" ];
+node5 [ label="down" ];
+node6 [ label="down" ];
+node7 [ label="right" ];
+node8 [ label="right" ];
 node9 [ label="take-control" ];
 node10 [ label="take-control" ];
-node11 [ label="take-control" ];
+node11 [ label="right" ];
 node12 [ label="take-control" ];
-node13 [ label="take-control" ];
-node14 [ label="communicate" ];
+node13 [ label="communicate" ];
+node14 [ label="take-control" ];
 node0 -> node1 [label="rmap1"];
 node0 -> node2 [label="rmap2"];
 node1 -> node3 [label="rmap1"];
@@ -99,5 +99,5 @@ node6 -> node13 [label="rmap1"];
 node6 -> node14 [label="rmap2"];
 }
 
-Sampled value =  0 (nrSimRuns=10000)
-Computed value = 0
+Sampled value =  10 (nrSimRuns=10000)
+Computed value = 10

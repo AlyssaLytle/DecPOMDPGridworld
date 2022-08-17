@@ -68,12 +68,7 @@ def get_trees(filename, agent0_branch_size, agent1_branch_size):
 def get_graph_viz_limit_branches(human_tree, machine_tree, start_state, trans_prob, rmap_list):
         #returns trees in graph_viz format including only relevant branches
         #ONLY WRITTEN FOR TREES OF HEIGHT 1 FOR NOW
-        if trans_prob:
-            #If rmap is changing (transitional probabilities), 
-            machine_obs = rmap_list
-        else:
-            [location, rmap_name, control] = start_state
-            machine_obs = [rmap_name]
+        machine_obs = rmap_list
         output1 = 'digraph human_tree {\n'
         output2 = 'digraph machine_tree {\n'
         output1 += 'edge [dir=none];\n'

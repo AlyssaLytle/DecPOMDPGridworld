@@ -1,3 +1,15 @@
+from tokenize import Double
+from tracemalloc import start
+
+def add_to_dict(dict, elem, val):
+    #if dictionary contains element, then add val to its existing value
+    if elem in dict.keys():
+        dict[elem] += val
+    #else, add element to dictionary
+    else:
+        dict[elem] = val
+    return dict
+
 def state_to_string(state):
     if (isinstance(state, list)):
         [location, rmap_name, control] = state
@@ -47,11 +59,13 @@ def is_allowed_human(start_state, action):
 
 class GWDPOMDP:
     
-    def __init__(self, width, height, rmaps_dict, cost_dict):
+    def __init__(self, width, height, rmaps_dict, cost_dict, trans_prob):
         self.width = width
         self.height = height
         self.rmaps = rmaps_dict
         self.costs = cost_dict
+        self.directions = ["up","down","left","right"]
+        self.trans_prob = trans_prob
         
     def move(self, start : str, action : str) -> list:
         [i,j] = start
@@ -68,6 +82,7 @@ class GWDPOMDP:
             if j > 1:
                 j -= 1
         return [i,j]
+    
     
     def transition(self, start : str, h_action : str, m_action : str) -> list:
         [start_loc, start_rmap_name, start_control] = start
@@ -89,12 +104,41 @@ class GWDPOMDP:
             print("ERROR! Not reading control correctly.")
             new_loc = [-1,-1]
             new_control = "ERROR"
-        return [new_loc, start_rmap_name, new_control]    
+        return [new_loc, start_rmap_name, new_control]  
     
-    def get_transition_line(self,start_state : str, h_action : str, m_action : str) -> str:
-        tline = "T : " + h_action + " " + m_action + " : " + state_to_string(start_state) + " : "
+    def get_observation_strings(self, start_state : list, action :str, possible_rmaps : list) -> str:
+        [h_action, m_action] = action
         next_state = self.transition(start_state, h_action, m_action)
-        tline += state_to_string(next_state) + " : 1\n"
+        [h_obs, m_obs] = self.get_observation(next_state, action, possible_rmaps)
+        obs_strs = ""
+        obs_prefix = "O: " + h_action + " " + m_action + " : " 
+        obs_prefix += state_to_string(next_state) + " : "
+        for rmap in h_obs.keys():
+            obs_strs += obs_prefix + rmap + " " + m_obs + " : " + str(h_obs[rmap]) + "\n"
+        #if map changes:
+        [l,rmap,c] = next_state
+        for r in possible_rmaps:
+            if (r != rmap):
+                next_state2 = [l, r, c]
+        obs_prefix = "O: " + h_action + " " + m_action + " : " 
+        obs_prefix += state_to_string(next_state2) + " : "
+        [h_obs, m_obs] = self.get_observation(next_state2, action, possible_rmaps)
+        for rmap in h_obs.keys():
+            obs_strs += obs_prefix + rmap + " " + m_obs + " : " + str(h_obs[rmap]) + "\n"
+        return obs_strs  
+    
+    def get_transition_line(self,start_state : str, h_action : str, m_action : str, possible_rmaps : list) -> str:
+        
+        prefix = "T : " + h_action + " " + m_action + " : " + state_to_string(start_state) + " : "
+        #You stay on the same map
+        next_state = self.transition(start_state, h_action, m_action)
+        tline = prefix + state_to_string(next_state) + " : " + str(1-self.trans_prob) + "\n"
+        #OR you change maps
+        [l, rmap, c] = next_state
+        for rew_map in possible_rmaps:
+            if (rew_map != rmap):
+                opt_next_state = [l, rew_map, c]
+                tline += prefix + state_to_string(opt_next_state) + " : " + str(self.trans_prob) + "\n"
         return tline
                 
     def get_reward(self, next_state: list, action: list) -> int:
@@ -111,13 +155,19 @@ class GWDPOMDP:
         return int(reward)
     
 
-    def get_reward_line(self, start_state : str, action :str) -> str:
+    def get_reward_line(self, start_state : str, action :str, possible_rmaps : list) -> str:
         [h_action, m_action] = action
-        next_state = self.transition(start_state, h_action, m_action)
-        reward = self.get_reward(next_state, action)
-        r_str = "R: " + h_action + " " + m_action + " : "
-        r_str += state_to_string(start_state) + " : * : * : "
-        r_str += str(reward) + "\n"
+        next_state1 = self.transition(start_state, h_action, m_action)
+        [l, rmap, c] = next_state1
+        for rew_map in possible_rmaps:
+            if (rew_map != rmap):
+                next_state2 = [l, rew_map, c]
+        reward = self.get_reward(next_state1, action)
+        reward2 = self.get_reward(next_state2, action)
+        r_prefix = "R: " + h_action + " " + m_action + " : "
+        r_prefix += state_to_string(start_state) + " : "
+        r_str = r_prefix + state_to_string(next_state1) + " : * : " + str(reward) + "\n"
+        r_str += r_prefix + state_to_string(next_state2) + " : * : " + str(reward2) + "\n"
         return r_str
         
     def get_observation(self, next_state : str, action : str, possible_rmaps : list) -> list:
@@ -134,18 +184,9 @@ class GWDPOMDP:
         m_obs = rmap_name
         return [h_obs, m_obs]
     
-    def get_observation_strings(self, start_state : str, action :str, possible_rmaps : list) -> str:
-        [h_action, m_action] = action
-        next_state = self.transition(start_state, h_action, m_action)
-        [h_obs, m_obs] = self.get_observation(next_state, action, possible_rmaps)
-        obs_strs = ""
-        obs_prefix = "O: " + h_action + " " + m_action + " : " 
-        obs_prefix += state_to_string(next_state) + " : "
-        for rmap in h_obs.keys():
-            obs_strs += obs_prefix + rmap + " " + m_obs + " : " + str(h_obs[rmap]) + "\n"
-        return obs_strs
     
-    def write(self, start_state: list, possible_rmaps : list, actions : list) -> str:
+    
+    def write(self, start_states: list, possible_rmaps : list, actions : list) -> str:
         output = "agents: 2\n"
         output += "discount: 1\n"
         output += "values: reward\n"
@@ -159,7 +200,10 @@ class GWDPOMDP:
                         states.append(state)
                         output += " " + state_to_string(state)
         output += "\n"
-        output += "start include: " + state_to_string(start_state) + "\n"
+        output += "start include:" 
+        for s in start_states:
+            output += " " + state_to_string(s)
+        output += "\n"
         output += "actions: \n"
         action_str = ""
         for elem in actions:
@@ -179,9 +223,9 @@ class GWDPOMDP:
         for s in states:
             for m_action in actions:
                 for h_action in actions:
-                    transitions += self.get_transition_line(s,h_action,m_action)
+                    transitions += self.get_transition_line(s,h_action,m_action, possible_rmaps)
                     observations += self.get_observation_strings(s,[h_action,m_action],possible_rmaps)
-                    rewards += self.get_reward_line(s,[h_action,m_action])
+                    rewards += self.get_reward_line(s,[h_action,m_action],possible_rmaps)
                     # if (is_allowed_human(s,h_action) & is_allowed_machine(s,m_action)):
                     #     transitions += self.get_transition_line(s,h_action,m_action)
                     #     observations += self.get_observation_strings(s,[h_action,m_action],possible_rmaps)

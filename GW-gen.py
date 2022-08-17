@@ -15,6 +15,8 @@ regular_cost = 0
 goal_reward = 10
 sink_cost = -1000
 
+transition_likelihood = .1
+
 cost_dict = {"control" : switch_control_cost, "communicate" : communicate_cost, "sink": sink_cost}
 
 for i in range (1,4):
@@ -36,18 +38,24 @@ for i in range (1,4):
                 
 print(rmap1)
 print(rmap2)
+print(rmap3)
 
 #this is to know which reward maps we could potentially be on                
 possible_rmaps = ["rmap1", "rmap2"]
+#possible_rmaps = ["rmap1", "rmap3"]
 actions = ["down", "right", "communicate", "take-control"]
 
-writer = GWDPOMDP(3,3,rmap_dict, cost_dict)
+writer = GWDPOMDP(3,3,rmap_dict, cost_dict,transition_likelihood)
 
-start_state = [[1,1],"rmap1","H"]
+ss1 = [[1,1],"rmap1","H"]
+ss2 = [[1,1],"rmap2","H"]
+ss3 = [[1,1],"rmap3","H"]
+start_states  = [ss1,ss2]
+#start_states = [ss1,ss3]
 
-dpomdp = writer.write(start_state, possible_rmaps, actions)
+dpomdp = writer.write(start_states, possible_rmaps, actions)
 
-filename = "33gw.dpomdp"
+filename = "33gw-late.dpomdp"
 f = open(filename, "w")
 f.writelines(dpomdp)
 f.close()

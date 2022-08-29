@@ -1,3 +1,4 @@
+import re
 import sys
 import graphviz
 
@@ -65,7 +66,7 @@ def get_trees(filename, agent0_branch_size, agent1_branch_size):
 
 #If machine communicates, human only observes whatever the machine observed
 
-def get_graph_viz_limit_branches(human_tree, machine_tree, start_state, trans_prob, rmap_list):
+def get_graph_viz_limit_branches(human_tree, machine_tree, trans_prob, rmap_list):
         #returns trees in graph_viz format including only relevant branches
         #ONLY WRITTEN FOR TREES OF HEIGHT 1 FOR NOW
         machine_obs = rmap_list
@@ -124,29 +125,41 @@ def get_graph_viz_limit_branches(human_tree, machine_tree, start_state, trans_pr
 ''' 
 !!!! Values :
 '''
-start_state = [[1,1],"rmap1","H"]
-trans_prob = False
+
+
+def gen_figs(result_name, result_path, trans_prob, rmap_list):
+    '''Read Results'''
+    full_path = "/afs/cs.unc.edu/home/abyrnes1/.madp/results/GMAA/" + result_path
+    [h_tree, m_tree, value] = get_trees(full_path, 2, 2)
+    '''Make .dot files'''
+    [hgraph, mgraph] = get_graph_viz_limit_branches(h_tree, m_tree, trans_prob, rmap_list)
+    f = open("htree.dot", "w")
+    f.writelines(hgraph)
+    f.close()
+    g = open("mtree.dot", "w")
+    g.writelines(mgraph)
+    g.close()
+    '''Generate Graphviz Images'''
+    graph = graphviz.Source.from_file('htree.dot')
+    graph.format = 'png'
+    #graph.view()
+    tree_name = "figs/" + result_name + "-human"
+    filename = graph.render(filename=tree_name)
+
+    graph = graphviz.Source.from_file('mtree.dot')
+    graph.format = 'png'
+    #graph.view()
+    tree_name = "figs/" + result_name + "-machine"
+    filename = graph.render(filename=tree_name)
+
+
+
 rmap_list = ["rmap1", "rmap2"]
-
-'''Read Results'''
-[h_tree, m_tree, value] = get_trees("Ex1-Res", 2, 2)
-'''Make .dot files'''
-[hgraph, mgraph] = get_graph_viz_limit_branches(h_tree, m_tree, start_state, trans_prob, rmap_list)
-f = open("htree.dot", "w")
-f.writelines(hgraph)
-f.close()
-g = open("mtree.dot", "w")
-g.writelines(mgraph)
-g.close()
-'''Generate Graphviz Images'''
-graph = graphviz.Source.from_file('htree.dot')
-graph.format = 'png'
-graph.view()
-#tree_name = "figs/Human"
-#filename = graph.render(filename=tree_name)
-
-graph = graphviz.Source.from_file('mtree.dot')
-graph.format = 'png'
-graph.view()
-#tree_name = "figs/Machine"
-#filename = graph.render(filename=tree_name)
+result_name = "original"
+result_path = "33gw/GMAA_33gw_MAAstar_QMDP_h4_restarts1_NoCache_BGIP-BnB_ka0_JTODescendingProbability_CCI1_JPol"
+gen_figs("original", result_path, False, rmap_list)
+result_path2 = "33gw-late/GMAA_33gw-late_MAAstar_QMDP_h4_restarts1_NoCache_BGIP-BnB_ka0_JTODescendingProbability_CCI1_JPol"
+gen_figs("probabilistic", result_path2, True, rmap_list)
+rmap_list2 = ["rmap1", "rmap3"]
+result_path3 = "33gw-nocomm/GMAA_33gw-nocomm_MAAstar_QMDP_h4_restarts1_NoCache_BGIP-BnB_ka0_JTODescendingProbability_CCI1_JPol"
+gen_figs("nocomm", result_path3, True, rmap_list2)

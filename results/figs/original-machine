@@ -1,0 +1,32 @@
+digraph machine_tree {
+edge [dir=none];
+node0 [ label = "down" ];
+node1 [ label = "communicate" ];
+node2 [ label = "communicate" ];
+node3 [ label = "right" ];
+node4 [ label = "down" ];
+node5 [ label = "down" ];
+node6 [ label = "down" ];
+node7 [ label = "down" ];
+node8 [ label = "down" ];
+node9 [ label = "down" ];
+node10 [ label = "down" ];
+node11 [ label = "down" ];
+node12 [ label = "down" ];
+node13 [ label = "right" ];
+node14 [ label = "right" ];
+node0 -> node1 [label="rmap1"];
+node0 -> node2 [label="rmap2"];
+node1 -> node3 [label="rmap1"];
+node1 -> node4 [label="rmap2"];
+node2 -> node5 [label="rmap1"];
+node2 -> node6 [label="rmap2"];
+node3 -> node7 [label="rmap1"];
+node3 -> node8 [label="rmap2"];
+node4 -> node9 [label="rmap1"];
+node4 -> node10 [label="rmap2"];
+node5 -> node11 [label="rmap1"];
+node5 -> node12 [label="rmap2"];
+node6 -> node13 [label="rmap1"];
+node6 -> node14 [label="rmap2"];
+}

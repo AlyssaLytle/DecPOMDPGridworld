@@ -1,6 +1,14 @@
 # DecPOMDPGridworld
 This directory contains problem examples meant for the [MADP Toolbox](http://www.fransoliehoek.net/fb/index.php?fuseaction=software.madp). 
 
+## Running Solver
+Command to run solver without incremental expansion:
+    ../MADP/src/solvers/GMAA --sparse --GMAA=MAAstar <filename>.dpomdp -h4
+
+Command to run solver with incremental expansion:
+    ../MADP/src/solvers/GMAA --sparse --GMAA=MAAstar --BGIP_Solver=BnB --BnB-ordering=Prob  <filename>.dpomdp -h4 
+
+
 
 
 ## Example 1: 23gwsimple

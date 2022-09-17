@@ -1,1 +1,10 @@
-{sh OptSolve.sh; sh OptSolve.sh; sh OptSolve.sh; sh OptSolve.sh; sh OptSolve.sh} | tr "\n" " " " " " " " " " " > optruntimes.log
+sh OptSolve.sh
+sh OptSolve.sh
+sh OptSolve.sh
+sh OptSolve.sh
+sh OptSolve.sh
+sh OptSolve.sh
+sh OptSolve.sh
+sh OptSolve.sh
+sh OptSolve.sh
+sh OptSolve.sh

@@ -17,7 +17,7 @@ def make_cmd(fname, ie, cluster):
     return output
 
 def make_shell(ie, cluster, shellname, num_repeats):
-    get_time = """now="$(date +'%M:%S')"\n"""
+    get_time = """now="$(date +'%M:%S:%3N')"\n"""
     cmd = "cd .. \n"
     for x in range(num_repeats):
         cmd += get_time

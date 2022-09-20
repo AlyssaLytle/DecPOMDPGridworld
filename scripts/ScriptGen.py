@@ -49,7 +49,7 @@ ICE_name = "ICE.sh"
 call_line(No_opt_name)
 
 
-num_ex = 10
+num_ex = 100
 shell_out = ""
 make_shell(False, False, No_opt_name, num_ex)
 shell_out += call_line(No_opt_name)
